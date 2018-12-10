@@ -1,4 +1,4 @@
-(ns day-03
+(ns aoclj-2017.day-03
   (:require
    [clojure.string :as str]
    [clojure.set :as cset]

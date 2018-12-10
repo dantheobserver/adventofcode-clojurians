@@ -1,4 +1,4 @@
-(ns day-07
+(ns aoclj-2017.day-07
   (:require [clojure.spec.alpha :as s]
             [clojure.string :as str]
             [utils :refer [get-symbol-list]]))

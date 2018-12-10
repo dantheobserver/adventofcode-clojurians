@@ -1,4 +1,4 @@
-(ns day-04
+(ns aoclj-2017.day-04
   (:require [clojure.string :as str]))
 
 (defn- all-letters?

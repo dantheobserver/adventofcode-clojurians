@@ -1,4 +1,4 @@
-(ns day-05
+(ns aoclj-2017.day-05
   (:require [utils :refer [clean-input]]
             [clojure.string :as str]))
 

@@ -1,4 +1,4 @@
-(ns day-06
+(ns aoclj-2017.day-06
   (:require [utils :refer [clean-input]]))
 
 (def input "4	10	4	1	8	4	9	14	5	1	14	15	0	15	3	5")

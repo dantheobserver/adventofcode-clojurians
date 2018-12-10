@@ -1,4 +1,4 @@
-(ns day-02
+(ns aoclj-2017.day-02
   (:require utils
             [clojure.string :as str]
             [inputs :refer [day-02] :rename {day-02 input}]))

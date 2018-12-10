@@ -1,4 +1,4 @@
-(ns day-01
+(ns aoclj-2017.day-01
   (:require [utils]))
 
 (defn- char->int [chr] (Integer/parseInt (str chr)))
