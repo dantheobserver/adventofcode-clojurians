@@ -15,10 +15,10 @@
 (defn collides?
   [{[x0 y0] :coords [w0 h0] :dimensions}
    {[x1 y1] :coords [w1 h1] :dimensions}]
-  (not (or (< (+ x1 w1 -1) x0)
-           (< (+ x0 w0 -1) x1)
-           (< (+ y1 h1 -1) y0)
-           (< (+ y0 h0 -1) y1))))
+  (not (or (< (+ x1 (dec w1)) x0)
+           (< (+ y1 (dec h1)) y0)
+           (< (+ x0 (dec w0)) x1)
+           (< (+ y0 (dec h0)) y1))))
 
 (defn part-1
   [data]
@@ -34,28 +34,21 @@
   [data]
   (loop [[entry & others] data]
     (if entry
-      (let [clears? #(not (collides? entry %))
-            non-colliding (filter clears? others)]
-        (if (= (count non-colliding) (count others))
-          ;;element doesn't collide, is match
-          entry
-          ;;collided at least once
-          (recur non-colliding))))))
+      (if (some (partial collides? entry) others)
+        (recur (concat others (list entry)))
+        entry))))
 
-#_(part-1 (data-seq input))
+(time (part-1 (data-seq input)))
 
-(->> (part-2 (data-seq input))
-     :id)
+(time (part-2 (data-seq input)))
 
 (comment
   (let [[a b c d :as data] (data-seq ["#1 @ 1,3: 4x4"
                                       "#2 @ 3,1: 4x4"
-                                      "#3 @ 5,5: 2x2"
-                                      #_"#4 @ 5,5: 2x2"])]
+                                      "#3 @ 5,5: 2x2"])]
     #_(collides? c d)
     #_(some #((partial collides? a)) [a b c])
     (part-2 data))
-
 
   (let [col (take 3 (data-seq input))]
     (some (complement (partial collides? (first col))) (rest col))))
