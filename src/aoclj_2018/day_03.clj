@@ -1,6 +1,5 @@
 (ns aoclj-2018.day-03
-  (:require
-   [aoclj-2018.data :refer [day-03 data-seq] :rename {day-03 input}]))
+  (:require [aoclj-2018.data.day-03 :refer [data-seq input]]))
 
 ;;data converter
 (set! *warn-on-reflection* true)

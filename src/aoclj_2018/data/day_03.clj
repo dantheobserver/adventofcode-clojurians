@@ -1,4 +1,4 @@
-(ns aoclj-2018.data
+(ns aoclj-2018.data.day-03
   (:require [clojure.edn :as edn]
             [clojure.string :as str]))
 
@@ -21,7 +21,7 @@
 
 (defn data-seq [data] (map data-entry data))
 
-(def day-03 ["#1 @ 912,277: 27x20"
+(def input ["#1 @ 912,277: 27x20"
              "#2 @ 129,477: 14x12"
              "#3 @ 915,716: 17x23"
              "#4 @ 809,807: 24x16"
